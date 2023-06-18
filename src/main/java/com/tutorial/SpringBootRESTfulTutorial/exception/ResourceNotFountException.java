@@ -1,6 +1,7 @@
 package com.tutorial.SpringBootRESTfulTutorial.exception;
 
 public class ResourceNotFountException extends RuntimeException{
+    private static final long serialVersionID=1L;
     private String resourceName;
     private String fieldName;
     private Object fieldValue;
@@ -10,5 +11,17 @@ public class ResourceNotFountException extends RuntimeException{
         this.resourceName = resourceName;
         this.fieldName = fieldName;
         this.fieldValue = fieldValue;
+    }
+
+    public String getResourceName() {
+        return resourceName;
+    }
+
+    public String getFieldName() {
+        return fieldName;
+    }
+
+    public Object getFieldValue() {
+        return fieldValue;
     }
 }
