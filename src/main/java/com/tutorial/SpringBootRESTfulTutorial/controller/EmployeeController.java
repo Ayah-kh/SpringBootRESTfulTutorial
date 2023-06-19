@@ -31,10 +31,14 @@ public class EmployeeController {
         return employeeService.getAllEmployees();
     }
 
-    @GetMapping
-    public Employee getEmployee(long id){
-        return employeeService.getEmployeeById(id);
+    //build get employee by id REST API
+    //http://localhost:8080/api/employees/1
+    @GetMapping("{id}")
+    public ResponseEntity<Employee> getEmployeeById(@PathVariable("id") long id){
+        return new ResponseEntity<>(employeeService.getEmployeeById(id),HttpStatus.OK);
     }
+    //build update employee REST API
+
 
 
 
