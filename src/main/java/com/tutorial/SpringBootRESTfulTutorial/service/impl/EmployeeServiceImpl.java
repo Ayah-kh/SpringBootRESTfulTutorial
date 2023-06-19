@@ -48,7 +48,18 @@ public class EmployeeServiceImpl implements EmployeeService {
         existingEmployee.setFirstName(employee.getFirstName());
         existingEmployee.setLastName(employee.getLastName());
         existingEmployee.setEmail(employee.getEmail());
-        employeeRepository.save(employee);
+        employeeRepository.save(existingEmployee);
         return existingEmployee;
     }
+
+    @Override
+    public void deleteEmployee(long id) {
+        employeeRepository.findById(id).orElseThrow(
+                ()->new ResourceNotFountException("Employee","id",id));
+        employeeRepository.deleteById(id);
+    }
+
+
+
+
 }
