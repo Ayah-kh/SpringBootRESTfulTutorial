@@ -31,6 +31,11 @@ public class EmployeeController {
         return employeeService.getAllEmployees();
     }
 
+    @GetMapping
+    public Employee getEmployee(long id){
+        return employeeService.getEmployeeById(id);
+    }
+
 
 
 
