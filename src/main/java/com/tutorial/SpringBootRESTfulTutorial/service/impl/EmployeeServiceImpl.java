@@ -7,7 +7,6 @@ import com.tutorial.SpringBootRESTfulTutorial.service.EmployeeService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -36,14 +35,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 //        else throw new ResourceNotFountException("employee","Id",id);
 
         return employeeRepository.findById(id).orElseThrow(
-                ()->new ResourceNotFountException("Employee","id",id));
+                () -> new ResourceNotFountException("Employee", "id", id));
     }
 
     @Override
     public Employee updateEmployee(Employee employee, long id) {
         //we need to check whether the employee with given id is existed in our database or not
-        Employee existingEmployee= employeeRepository.findById(id).orElseThrow(
-                ()->new ResourceNotFountException("Employee","id",id));
+        Employee existingEmployee = employeeRepository.findById(id).orElseThrow(
+                () -> new ResourceNotFountException("Employee", "id", id));
 
         existingEmployee.setFirstName(employee.getFirstName());
         existingEmployee.setLastName(employee.getLastName());
@@ -55,11 +54,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void deleteEmployee(long id) {
         employeeRepository.findById(id).orElseThrow(
-                ()->new ResourceNotFountException("Employee","id",id));
+                () -> new ResourceNotFountException("Employee", "id", id));
         employeeRepository.deleteById(id);
     }
-
-
 
 
 }
