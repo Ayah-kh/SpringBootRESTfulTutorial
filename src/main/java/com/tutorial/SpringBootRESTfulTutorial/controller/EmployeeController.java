@@ -24,7 +24,7 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeService.saveEmployee(employee), HttpStatus.CREATED);
     }
 
-    //Build gell all employees REST API
+    //Build get all employees REST API
 
     @GetMapping
     public List<Employee> getAllEmployees(){
