@@ -31,5 +31,4 @@ public class Employee {
     private LocalDateTime dateCreated;
     @UpdateTimestamp
     private LocalDateTime dateUpdated;
-
 }
