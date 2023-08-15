@@ -4,7 +4,6 @@ import com.tutorial.SpringBootRESTfulTutorial.exception.ResourceNotFountExceptio
 import com.tutorial.SpringBootRESTfulTutorial.model.Employee;
 import com.tutorial.SpringBootRESTfulTutorial.repository.EmployeeRepository;
 import com.tutorial.SpringBootRESTfulTutorial.service.EmployeeService;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
