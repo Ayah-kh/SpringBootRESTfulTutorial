@@ -25,7 +25,6 @@ public class EmployeeController {
     }
 
     //Build get all employees REST API
-
     @GetMapping
     public List<Employee> getAllEmployees() {
         return employeeService.getAllEmployees();
@@ -37,16 +36,14 @@ public class EmployeeController {
     public ResponseEntity<Employee> getEmployeeById(@PathVariable("id") long id) {
         return new ResponseEntity<>(employeeService.getEmployeeById(id), HttpStatus.OK);
     }
-    //build update employee REST API
 
+    //build update employee REST API
     //http://localhost:8080/api/employees/1
     @PutMapping("{id}")
     public ResponseEntity<Employee> updateEmployee(@PathVariable("id") long id
                                                     ,@RequestBody Employee employee) {
 
         return new ResponseEntity<>(employeeService.updateEmployee(employee,id),HttpStatus.OK);
-
-
     }
 
     //build delete employee REST API
