@@ -41,17 +41,15 @@ public class EmployeeController {
     //http://localhost:8080/api/employees/1
     @PutMapping("{id}")
     public ResponseEntity<Employee> updateEmployee(@PathVariable("id") long id
-                                                    ,@RequestBody Employee employee) {
+            , @RequestBody Employee employee) {
 
-        return new ResponseEntity<>(employeeService.updateEmployee(employee,id),HttpStatus.OK);
+        return new ResponseEntity<>(employeeService.updateEmployee(employee, id), HttpStatus.OK);
     }
 
     //build delete employee REST API
     @DeleteMapping("{id}")
-    public ResponseEntity<String> deleteEmployee(@PathVariable("id")long id){
+    public ResponseEntity<String> deleteEmployee(@PathVariable("id") long id) {
         employeeService.deleteEmployee(id);
-        return new ResponseEntity<>("Employee Deleted Successfully",HttpStatus.OK);
+        return new ResponseEntity<>("Employee Deleted Successfully", HttpStatus.OK);
     }
-
-
 }
